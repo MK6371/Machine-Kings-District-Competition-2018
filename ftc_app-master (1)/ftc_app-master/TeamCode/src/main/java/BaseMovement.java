@@ -1,3 +1,4 @@
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -5,6 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 /**
  * Created by 300187 on 3/15/2018.
  */
+@Disabled
 @TeleOp(name = "BaseMovement")
 public class BaseMovement extends OpMode{
     //Declare Mecanum Wheels

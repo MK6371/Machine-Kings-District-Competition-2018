@@ -1,6 +1,7 @@
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.Range;
 
 /**
  * Created by 300187 on 3/20/2018.
@@ -8,25 +9,49 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp(name = "BaseTest")
 public class BaseTest extends OpMode {
     //declare variables in Android Studio
-    public DcMotor LFspeed;
-    public DcMotor LBspeed;
-    public DcMotor RFspeed;
-    public DcMotor RBspeed;
+    public float LFspeed;
+    public float LBspeed;
+    public float RFspeed;
+    public float RBspeed;
+    public DcMotor motorLF;
+    public DcMotor motorLB;
+    public DcMotor motorRF;
+    public DcMotor motorRB;
+
 
     @Override
     public void init() {
-    LFspeed = hardwareMap.dcMotor.get("LFspeed");
-    LBspeed = hardwareMap.dcMotor.get("LBspeed");
-    RFspeed = hardwareMap.dcMotor.get("RFspeed");
-    RBspeed = hardwareMap.dcMotor.get("RBspeed");
+    //declare on the phone
+    motorLF = hardwareMap.dcMotor.get("motorLf");
+    motorRB = hardwareMap.dcMotor.get("motorRB");
+    motorLB = hardwareMap.dcMotor.get("motorLB");
+    motorRF = hardwareMap.dcMotor.get("motorRF");
     }
 
     @Override
     public void loop() {
+        //
         float LFspeed = gamepad1.left_stick_y - gamepad1.left_stick_x;
         float LRspeed = gamepad1.left_stick_y + gamepad1.left_stick_x;
         float BFspeed = gamepad1.right_stick_y + gamepad1.right_stick_x;
         float BRspeed = gamepad1.right_stick_y - gamepad1.right_stick_x;
+
+
+        LFspeed = Range.clip(LFspeed, -1,1);
+        LBspeed = Range.clip(LBspeed, -1,1);
+        RFspeed = Range.clip(RFspeed, -1,1);
+        RBspeed = Range.clip(RBspeed, -1,1);
+
+
+        motorRF.setPower(RFspeed);
+        motorLB.setPower(LBspeed);
+        motorRB.setPower(RBspeed);
+        motorLF.setPower(LFspeed);
+
+
+
+
+
 
 
     }
