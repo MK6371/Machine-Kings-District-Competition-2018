@@ -20,11 +20,11 @@ public class IntakeTest extends OpMode {
 
     @Override
     public void loop() {
-        if(gamepad1.right_bumper){
+        if(gamepad2.right_bumper){
             intakeLeft.setPower(-1);    //INTAKE
             intakeRight.setPower(-1);
         }
-else if(gamepad1.left_bumper){
+else if(gamepad2.left_bumper){
             intakeLeft.setPower(1);     //OUTAKE
             intakeRight.setPower(1);
         }
