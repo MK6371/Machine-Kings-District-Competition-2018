@@ -22,7 +22,7 @@ public class BaseTest extends OpMode {
     @Override
     public void init() {
     //declare on the phone
-    motorLF = hardwareMap.dcMotor.get("motorLf");
+    motorLF = hardwareMap.dcMotor.get("motorLF");
     motorRB = hardwareMap.dcMotor.get("motorRB");
     motorLB = hardwareMap.dcMotor.get("motorLB");
     motorRF = hardwareMap.dcMotor.get("motorRF");
