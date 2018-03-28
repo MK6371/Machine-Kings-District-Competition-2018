@@ -31,10 +31,10 @@ public class BaseTest extends OpMode {
     @Override
     public void loop() {
         //
-        float LFspeed = gamepad1.left_stick_y - gamepad1.left_stick_x;
-        float LRspeed = gamepad1.left_stick_y + gamepad1.left_stick_x;
-        float BFspeed = gamepad1.right_stick_y + gamepad1.right_stick_x;
-        float BRspeed = gamepad1.right_stick_y - gamepad1.right_stick_x;
+        LFspeed = gamepad1.left_stick_y - gamepad1.left_stick_x;
+        LBspeed = gamepad1.left_stick_y + gamepad1.left_stick_x;
+        RFspeed = gamepad1.right_stick_y + gamepad1.right_stick_x;
+        RBspeed = gamepad1.right_stick_y - gamepad1.right_stick_x;
 
 
         LFspeed = Range.clip(LFspeed, -1,1);

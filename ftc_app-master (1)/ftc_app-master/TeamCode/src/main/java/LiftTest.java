@@ -8,18 +8,18 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp (name = "LiftTest")
 public class LiftTest extends OpMode{
     //declare variables on Android
-    public DcMotor liftL;
-    public DcMotor liftR;
+    public DcMotor lift;
+
     @Override
     public void init() {
      //declare on the phone
-    liftL = hardwareMap.dcMotor.get("liftL");
-    liftR = hardwareMap.dcMotor.get("liftR");
+    lift = hardwareMap.dcMotor.get("lift");
 
     }
 
     @Override
     public void loop() {
+
 
     }
 }
